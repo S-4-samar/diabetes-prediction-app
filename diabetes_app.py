@@ -92,10 +92,11 @@ def login_page():
 
     if login:
         if (
-            name.strip().lower() == "samar abbas"
-            and email.strip().lower() == "samar@gmail.com"
-            and reg_no.strip().upper() == "0425"
-        ):
+    name.strip().lower() == "demo user"
+    and email.strip().lower() == "demo@demo.com"
+    and reg_no.strip().upper() == "0000"
+):
+
             st.session_state.logged_in = True
             st.session_state.just_logged_in = True
             st.success("✅ Access Granted! Redirecting...")
