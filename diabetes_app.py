@@ -1,18 +1,44 @@
+# === Import + Config ===
 import streamlit as st
 import numpy as np
 import joblib
 import time
 from datetime import datetime
 
-# --- Load model ---
-model = joblib.load("diabetes_model.pkl")
-
-# --- Page config ---
+# === App Page Config ===
 st.set_page_config(page_title="Diabetes Prediction | Samar Abbas", layout="centered", page_icon="🩺")
 
-# --- Custom CSS including sidebar ---
+# === Global Styling ===
 st.markdown("""
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+        .title-text {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        div.stButton > button:first-child {
+            background-color: #0099ff;
+            color: white;
+            border-radius: 8px;
+            height: 3em;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        div.stButton > button:first-child:hover {
+            background-color: #005f99;
+            transition: 0.3s ease;
+        }
+
         section[data-testid="stSidebar"] {
             background: rgba(20, 22, 31, 0.85);
             border: 2px solid #00ffe7;
@@ -21,8 +47,18 @@ st.markdown("""
             padding: 20px;
             font-family: 'Orbitron', sans-serif;
         }
+
+        .result {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
     </style>
 """, unsafe_allow_html=True)
+
 
 # --- Sidebar Info ---
 st.sidebar.markdown("<h2 style='text-align:center;'>⚙️ About App</h2>", unsafe_allow_html=True)
