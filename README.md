@@ -11,6 +11,11 @@ Demo Login Credentials:
 👤 Name: demo user
 📧 Email: demo@demo.com
 🆔 Reg No: 0000
+or
+Full Name:  samar abbas  
+Email:      samar@gmail.com  
+Reg No:     0425  
+
 
 👉 [Try the App Live](https://diabetes-prediction-app-7xchdndg5anfxtpephghlp.streamlit.app/)
 🌐 *Hosted with Streamlit Cloud*
