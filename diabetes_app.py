@@ -3,6 +3,9 @@ import numpy as np
 import joblib
 import time
 from datetime import datetime
+# user name= samar abbas
+# email= samar@gmail.com
+# reg.no=0425
 
 # --- Initialize session state flags ---
 if "logged_in" not in st.session_state:
@@ -124,7 +127,7 @@ if st.session_state.logged_in and st.session_state.just_logged_in:
                 to { opacity: 1; }
             }
         </style>
-        <div class='fancy-greeting'>👨‍💻 Good Afternoon, Mr. Samar Abbas!</div>
+        <div class='fancy-greeting'>👨‍💻 Good Afternoon, Sir!</div>
     """, unsafe_allow_html=True)
 
     time.sleep(3)
