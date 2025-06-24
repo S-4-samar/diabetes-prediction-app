@@ -71,12 +71,12 @@ st.sidebar.markdown("<h2 style='text-align:center;'>⚙️ About App</h2>", unsa
 st.sidebar.markdown("""
 **Diabetes Prediction Model**  
 Enter details to predict whether 
-you have diabetes or not using ML.  
+you have the diabetes or not using ML.  
 
 👨‍💻 Samar Abbas  
 🎓 BSCS | Univ. of Narowal
 """)
-st.sidebar.info("Supervised by: **Mr. Nobody**")
+st.sidebar.info("Contact: **samarabbas0425@gmail.com**")
 
 # --- Title ---
 st.markdown('<div class="title-text">🩺 Diabetes Prediction App</div>', unsafe_allow_html=True)
