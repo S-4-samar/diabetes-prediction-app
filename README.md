@@ -7,6 +7,10 @@ Welcome to the **Diabetes Prediction App**, a futuristic machine learning web ap
 This app is built using **Streamlit** and **Scikit-learn**, and is designed with a glowing UI using CSS glassmorphism and animations.
 
 ## 🔗 Live Demo
+Demo Login Credentials:
+👤 Name: demo user
+📧 Email: demo@demo.com
+🆔 Reg No: 0000
 
 👉 [Try the App Live](https://diabetes-prediction-app-7xchdndg5anfxtpephghlp.streamlit.app/)
 🌐 *Hosted with Streamlit Cloud*
