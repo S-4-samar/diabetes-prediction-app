@@ -1,18 +1,23 @@
-# === Import + Config ===
 import streamlit as st
 import numpy as np
 import joblib
 import time
 from datetime import datetime
 
-# === App Page Config ===
+# --- Load model ---
+model = joblib.load("diabetes_model.pkl")
+
+# --- Page config ---
 st.set_page_config(page_title="Diabetes Prediction | Samar Abbas", layout="centered", page_icon="🩺")
 
-# === Global Styling ===
+# --- Custom CSS including sidebar ---
 st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
+        body {
+            background-color: #f5f7fa;
+        }
         .title-text {
             background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
             color: white;
@@ -24,7 +29,6 @@ st.markdown("""
             margin-bottom: 10px;
             font-family: 'Orbitron', sans-serif;
         }
-
         div.stButton > button:first-child {
             background-color: #0099ff;
             color: white;
@@ -33,12 +37,17 @@ st.markdown("""
             width: 100%;
             font-size: 16px;
         }
-
         div.stButton > button:first-child:hover {
             background-color: #005f99;
             transition: 0.3s ease;
         }
-
+        .result {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
         section[data-testid="stSidebar"] {
             background: rgba(20, 22, 31, 0.85);
             border: 2px solid #00ffe7;
@@ -47,29 +56,27 @@ st.markdown("""
             padding: 20px;
             font-family: 'Orbitron', sans-serif;
         }
-
-        .result {
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            0% {opacity: 0;}
-            100% {opacity: 1;}
+        section[data-testid="stSidebar"] h1, 
+        section[data-testid="stSidebar"] h2, 
+        section[data-testid="stSidebar"] h3 {
+            background: linear-gradient(90deg, #00ffe7, #6a5acd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 """, unsafe_allow_html=True)
-
 
 # --- Sidebar Info ---
 st.sidebar.markdown("<h2 style='text-align:center;'>⚙️ About App</h2>", unsafe_allow_html=True)
 st.sidebar.markdown("""
 **Diabetes Prediction Model**  
-Enter details to predict diabetes using ML.  
+Enter details to predict whether 
+you have diabetes or not using ML.  
 
 👨‍💻 Samar Abbas  
 🎓 BSCS | Univ. of Narowal
 """)
-st.sidebar.info("Supervised by: **Mr. No-Body**")
+st.sidebar.info("Supervised by: **Mr. Nobody**")
 
 # --- Title ---
 st.markdown('<div class="title-text">🩺 Diabetes Prediction App</div>', unsafe_allow_html=True)
